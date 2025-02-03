@@ -21,4 +21,12 @@ print(my_name[-2:])
 # Create a variable called first_name and one called last_name, then print your full name:
 first_name = 'Julieta'
 last_name = 'Wenger'
-print(first_name + ' ' + last name)
+print(first_name + ' ' + last_name)
+
+# Take the name of the user using input
+# Check if the name is the same as yours 
+# If so print 'we have the same name'
+
+username = input("What's your name?: ")
+if username == 'Julieta':
+    print("We have the same name.")
