@@ -85,6 +85,7 @@ print("Exercise 4\n")
 print("A float is a rational number so it can be expressed as a fraction mathematically, whereas an integer is literally an integer number.")
 
 mixed_list = sorted([i for i in range(2,6)]+[i+ .5 for i in range(1,5)])
+print(mixed_list)
 
 print("Given this list of integers:")
 int_list = [i for i in range(6)]
