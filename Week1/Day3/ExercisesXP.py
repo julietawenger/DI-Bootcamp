@@ -11,13 +11,15 @@ values = [10, 20, 30]
 Expected output:
 {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
 """
+
 print("\nExercise 1\n")
 keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]
 print(dict(zip(keys,values)))
 
 
-""" 🌟 Exercise 2 : Cinemax #2
+""" 
+Exercise 2 : Cinemax #2
 Instructions
 
     A movie theater charges different ticket prices depending on a person’s age.
@@ -35,6 +37,7 @@ Instructions
     Bonus: Ask the user to input the names and ages instead of using the provided family variable (Hint: ask the user for names and ages and add them into a family dictionary that is initially empty).
 """
 print("\nExercise 2\n")
+
 #names_keys = input("Enter family members here: ").split()
 #ages_keys = input("Enter family members ages here: ").split()
 #ages_keys = [int(x) for x in ages_keys]
