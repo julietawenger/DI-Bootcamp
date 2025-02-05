@@ -10,10 +10,14 @@ l = [5,10,15,20,25,50,20]
 
 l = [5,10,15,20,25,50,20]
 print(l)
+
 print(l[3])
-l[5] =70
+
+l[l.index(50)] =70
 print(l)
-l.pop(3)
+
+l.remove(20)
 print(l)
+
 l.append(3)
 print(l)

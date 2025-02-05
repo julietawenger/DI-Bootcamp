@@ -97,7 +97,7 @@ def affordable_items(dictionary, wallet):
     if affordable != []:
         return sorted(affordable)
     else:
-        return print("Nothing")
+        print("Nothing")
 
 print("\nExamples\n")        
 
