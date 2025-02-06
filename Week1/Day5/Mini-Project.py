@@ -57,7 +57,7 @@ def turn(board, player):
     return board_2
 
 def check_win(board):
-    """This is ugly but it checks if someone won or not."""
+    """This is ugly asf but it checks if someone won or not."""
     i = 1
     if board[rowcolumn_to_index(i   ,i  )] == board[rowcolumn_to_index(i  , i+1)]  == board[rowcolumn_to_index(i,i+2)  ] != ' ':
                 return True
@@ -104,7 +104,7 @@ def play():
         val ^= 1                                      
         counter +=1
 
-    if counter == 9:
+    if counter == 9 and check_win(board) == False:
         print("It's a tie.")
     else:
         val ^= 1
