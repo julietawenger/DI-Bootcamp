@@ -17,9 +17,14 @@ Using his technique, try to decode this matrix.
 alphabet = [chr(i) for i in range(97, 123)] + [chr(i).capitalize() for i in range(97, 123)]
 matrix_string = "7ii,Tsx,h%?,i #,sM ,$a ,#t%,^r!" 
 matrix = [list(x) for x in matrix_string.split(",")]
+secret_message = ""
+print(matrix)
 for j in range (len(matrix[0])):
     for i in range(len(matrix)):
         if matrix[i][j] in alphabet:
-            print(matrix[i][j]) 
+            secret_message += matrix[i][j] 
         else:
-            print(' ')    
+            secret_message += ' '
+
+print(secret_message)
+

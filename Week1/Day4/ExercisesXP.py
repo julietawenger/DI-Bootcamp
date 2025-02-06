@@ -234,53 +234,50 @@ The number of correct/incorrect answers are tracked and the user receives differ
     1.Create a function that asks the questions to the user, and check his answers. Track the number of correct, incorrect answers. Create a list of wrong_answers
     2.Create a function that informs the user of his number of correct/incorrect answers.
     3.Bonus : display to the user the questions he answered wrong, his answer, and the correct answer.
-    If he had more then 3 wrong answers, ask him to play again.
+    If he had more than 3 wrong answers, ask him to play again.
  """
 print("\nExercise 8\n")
+
 data = [
     {
-        "question 1": "What is Baby Yoda's real name?",
+        "question": "What is Baby Yoda's real name?",
         "answer": "Grogu"
     },
     {
-        "question 2": "Where did Obi-Wan take Luke after his birth?",
+        "question": "Where did Obi-Wan take Luke after his birth?",
         "answer": "Tatooine"
     },
     {
-        "question 3": "What year did the first Star Wars movie come out?",
+        "question": "What year did the first Star Wars movie come out?",
         "answer": "1977"
     },
     {
-        "question 4": "Who built C-3PO?",
+        "question": "Who built C-3PO?",
         "answer": "Anakin Skywalker"
     },
     {
-        "question 5": "Anakin Skywalker grew up to be who?",
+        "question": "Anakin Skywalker grew up to be who?",
         "answer": "Darth Vader"
     },
     {
-        "question 6": "What species is Chewbacca?",
+        "question": "What species is Chewbacca?",
         "answer": "Wookiee"
     }
 ]
 
 def star_wars_quiz():
-    wrong_questions = []
-    right_questions = []
-    counter = 0 # Goes through the elements of the list
-    for questions, answers in data:
-
-        print(data[counter][questions])
-        user_answer = input("Answer here: ").title()
-        
-        if user_answer == data[counter][answers]:
-
-            right_questions.append(questions[-1])
+    right_answers = []
+    wrong_answers = []
+    for index in range(len(data)):
+        print(data[index]['question'])
+        user_answer = input("Answer here: ").title()        
+        if user_answer == data[index]['answer']:
+            print('Correct!')
+            right_answers.append(index)
         else:
-            wrong_questions.append(questions[-1])
-        
-        counter =+ 1
-    print(f"You answered correctly questions number {', '.join(right_questions[:-1])} and {right_questions[-1]}. That's {len(right_questions)} right questions.")
-    print(f"You answered correctly questions number {', '.join(wrong_questions[:-1])} and {wrong_questions[-1]}. That's {len(wrong_questions)} wrong questions")      
-
-star_wars_quiz()      
+            print(f'Incorrect. Answer was: {data[index]['answer']}.')  
+            wrong_answers.append(index)   
+    print(f"You answered {len(right_answers)} correctly and {len(wrong_answers)} incorrectly.")
+    if len(wrong_answers)>3:
+        print('Play again!')
+star_wars_quiz()
