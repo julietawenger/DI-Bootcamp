@@ -94,6 +94,7 @@ def affordable_items(dictionary, wallet):
         value = money_converter(value)
         if value < wallet:
             affordable.append(key)
+            wallet -= value    
     if affordable != []:
         return sorted(affordable)
     else:
