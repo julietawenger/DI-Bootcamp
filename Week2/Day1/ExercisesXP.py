@@ -161,20 +161,18 @@ class Zoo:
         return grouped_animals
     
     def get_groups(self):
-        for groups in sort_animals():
-            print (sort_animals()[groups])
+        for groups in self.sort_animals():
+            print (self.sort_animals()[groups])
 
 
-temaiken = Zoo("Temaiken")
-temaiken.add_animal("zebra")
-temaiken.add_animal("owl")
-temaiken.add_animal("giraffe")
-temaiken.add_animal("cat")
-temaiken.add_animal("cougar")
-temaiken.get_animals()
-temaiken.sell_animal("zebra")
-temaiken.get_animals()
-print(temaiken.sort_animals())
-for groups in temaiken.sort_animals():
-    print (temaiken.sort_animals()[groups])
+ramat_gan_safari = Zoo("Temaiken")
+ramat_gan_safari.add_animal("zebra")
+ramat_gan_safari.add_animal("owl")
+ramat_gan_safari.add_animal("giraffe")
+ramat_gan_safari.add_animal("cat")
+ramat_gan_safari.add_animal("cougar")
+ramat_gan_safari.get_animals()
+ramat_gan_safari.sell_animal("zebra")
+ramat_gan_safari.get_animals()
+print(ramat_gan_safari.sort_animals())
 
