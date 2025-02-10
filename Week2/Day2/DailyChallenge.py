@@ -29,15 +29,16 @@ class Pagination:
     
     def nextPage(self):
         self.currentPage +=1
-        beg_item = (self.currentPage-1)*self.pageSize
-        end_item =  beg_item +self.pageSize
-        return( self.items[beg_item:end_item])     
-       
+        
     def prevPage(self):
         self.currentPage -=1
             
     def goToPage(self,pageNum):
         self.currentPage = pageNum
+        if pageNum > self.totalpages:
+            self.currentPage = self.totalpages
+        if pageNum < 1:
+            self.currentPage = 1    
 
     def getVisibleItems(self):
         if self.currentPage == self.totalpages:
@@ -49,6 +50,7 @@ class Pagination:
 
     def lastPage(self):
         self.currentPage = self.totalpages
+
 alphabetList = list("abcdefghijklmnopqrstuvwxyz")
 
 p = Pagination(alphabetList, 4)
@@ -77,5 +79,5 @@ p.getVisibleItems()
 p.firstPage()
 p.getVisibleItems()
 
-p.nextPage().nextPage()
+p.nextPage().nextPage() # I don't know how to make it iterable
 p.getVisibleItems()
