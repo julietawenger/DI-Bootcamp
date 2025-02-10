@@ -165,7 +165,7 @@ class Family:
         self.last_name = last_name
         
     def born(self, **kwargs):
-        self.members.append({k: val for k, val in kwargs.items()})    
+        self.members.append(kwargs)    
         print(f"Congratulations on the birth of {kwargs['name']}!") 
 
     def is_18(self, family_member):
@@ -176,13 +176,14 @@ class Family:
                 return False
             
     def family_presentation(self):
-        print(f"Family's last name is {self.last_name} and their members are:\n")
+        print(f"Family's last name is {self.last_name} and their members are:")
         for members in self.members:
-            sentence = ''
-            for k,val in members.items():
-                sentence += f"{k.capitalize()}: {val}. "
-            print(sentence + "\n")    
-         
+#           sentence = ''
+#           for k,val in members.items():
+#               sentence += f"{k.capitalize()}: {val}. "
+#           print(sentence + "\n")   """  
+            print(f"{members['name']}, age: {members['age']}, gender: {members['gender']}, under 18: {members['is_child']}.")
+
 addams_family = Family( [
             {'name':'Michael','age':35,'gender':'Male','is_child':False},
             {'name':'Sarah','age':32,'gender':'Female','is_child':False}
@@ -226,7 +227,7 @@ Instructions
 
 print("\nExercise 5\n")
 class TheIncredibles(Family):
-    def __init__(self, members, last_name):
+    def __init__(self, last_name, members):
         self.members = members
         self.last_name = last_name
     def use_powers(self, family_member):
@@ -236,5 +237,16 @@ class TheIncredibles(Family):
             elif m["name"] == family_member and m["age"]<18:
                 raise Exception('Not yet over 18 years old.')
     def incredible_presentation(self, members):
-        print("*Here is our powerful family*")        
-        
+        print("*Here is our powerful family*")   
+        super().family_presentation()
+        for member in self.members:
+            print(f"Incredible Name: {member['incredible_name']}, Power: {member['power']}")
+
+incredible_family_members = [
+    {'name': 'Michael', 'age': 35, 'gender': 'Male', 'is_child': False, 'power': 'fly', 'incredible_name': 'Roberto'},
+    {'name': 'Sarah', 'age': 32, 'gender': 'Female', 'is_child': False, 'power': 'read minds', 'incredible_name': 'Eduarda Cullen'}
+]
+incredible_family = TheIncredibles("Incredibles", incredible_family_members)
+
+incredible_family.born(name = 'Lily', age = 0, gender = 'Female', is_child = True, power= 'shines and dances incredibly well', incredible_name= "Star")
+incredible_family.incredible_presentation(incredible_family_members)
