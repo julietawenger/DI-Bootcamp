@@ -28,17 +28,20 @@ class Pagination:
          return self.items[:self.pageSize]
     
     def nextPage(self):
-        self.currentPage +=1
-        
+        self.goToPage(self.currentPage+1)
+        return self
+    
     def prevPage(self):
-        self.currentPage -=1
+        self.goToPage(self.currentPage-1)
+        return self
             
     def goToPage(self,pageNum):
         self.currentPage = pageNum
         if pageNum > self.totalpages:
             self.currentPage = self.totalpages
         if pageNum < 1:
-            self.currentPage = 1    
+            self.currentPage = 1 
+
 
     def getVisibleItems(self):
         if self.currentPage == self.totalpages:
@@ -63,7 +66,7 @@ p.nextPage()
 p.getVisibleItems()
 # ["e", "f", "g", "h"]
        
-p.goToPage(3)
+ p.goToPage(3)
 
 p.getVisibleItems()
 
@@ -79,5 +82,7 @@ p.getVisibleItems()
 p.firstPage()
 p.getVisibleItems()
 
-p.nextPage().nextPage() # I don't know how to make it iterable
+p.firstPage()
+p.getVisibleItems()
+p.nextPage().nextPage()
 p.getVisibleItems()
