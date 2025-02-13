@@ -68,7 +68,7 @@ Then, we will analyze a text coming from an external text file. Download the_str
     Hint: You need to open and read the text from the text file.
 
     2. Now, use the provided the_stranger.txt file and try using the class you created above.
- """
+"""
 
 the_stranger = Text.from_file('the_stranger.txt')
 the_stranger.frecuency("stranger")
