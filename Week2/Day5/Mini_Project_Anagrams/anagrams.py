@@ -1,9 +1,5 @@
 import anagram_checker
 
-
-text = anagram_checker.AnagramChecker()
-print(text.get_anagrams('train'))
-
 def main():
     print("\n*** Anagrams ***\n")
     while 1:
@@ -19,6 +15,6 @@ def main():
             
         text = anagram_checker.AnagramChecker() 
         anagrams = text.get_anagrams(userword)
-        print(f"Your word: {userword}\nThis is a valid English word\nAnagrams: {', '.join(anagrams)}.")
+        print(f"Your word: {userword}\nThis is a valid English word\nAnagrams: {', '.join(anagrams)}.\n")
 
 main()    

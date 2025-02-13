@@ -24,7 +24,7 @@ class AnagramChecker:
         if self.is_valid_word(word):
             pass
         else:
-            print("Invalid word. Try again.")
+            print("Word not found. Try again.")
             exit()
         anagrams =[]    
         for x in self.word_list:
