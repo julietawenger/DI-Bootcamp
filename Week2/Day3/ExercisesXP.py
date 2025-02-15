@@ -189,6 +189,10 @@ def time_alive(d,m,y, hour = 0, minute = 0):
         hour = f"0{hour}"
     if minute<10:
         minute =f"0{minute}"    
+    if m<10:
+        m =f"0{m}"
+    if d<10:
+        d =f"0{d}"                            
     time_al = datetime.datetime.now()-datetime.datetime.fromisoformat(f'{y}-{m}-{d} {hour}:{minute}:00.000')
     days = time_al.days
     hours, remainder = divmod(time_al.seconds, 3600)
