@@ -20,7 +20,9 @@ class Gene:
         self.value = random.randint(0,1)
 
     def gene_flip(self):
-        self.value = 1- self.value
+        flipping = random.randint(0,1)
+        if flipping == 1:
+            self.value = 1- self.value    
         return self.value
     
 
@@ -29,7 +31,7 @@ class Chromosome(Gene):
         self.chromosome = [Gene() for _ in range(10)]
 
     def chromosome_flip(self):
-        self.chromosome =  [random.randint(0,1) for _ in self.chromosome]
+        self.chromosome =  [g.gene_flip() for g in self.chromosome]
 
     
 class DNA(Chromosome):
@@ -37,12 +39,15 @@ class DNA(Chromosome):
         self.dna = [Chromosome() for _ in range(10)]
     
     def dna_flip(self):
-        self.dna =  [random.randint(0,1) for _ in self.dna]
+        self.dna =  [c.chromosome_flip() for c in self.dna]
 
             
 class Organism(DNA):
     def __init__(self, environment_parameter):       
         self.environment_parameter = environment_parameter
+    def mutate(self):
+        if random.random() < self.environment_factor:
+            self.dna_flip()   
 
  # Not finished            
         
