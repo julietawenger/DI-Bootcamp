@@ -67,3 +67,29 @@ print(Circle.color)
 print(circle1.get_color())
 circle1.grow(3)
 print(circle1.diameter)
+
+#%%
+class MyClass(object):
+    count = 0
+
+    def __init__(self, val):
+        self.val = self.filterint(val)
+        MyClass.count += 1
+
+    @staticmethod
+    def filterint(value):
+        if not isinstance(value, int):
+            print("Entered value is not an INT, value set to 0")
+            return 0
+        else:
+            return value
+
+
+a = MyClass(5)
+b = MyClass(10)
+c = MyClass(15)
+
+print(a.val) # 5
+print(b.val) # 10
+print(c.val) # 15
+print(a.filterint(100)) # 100
