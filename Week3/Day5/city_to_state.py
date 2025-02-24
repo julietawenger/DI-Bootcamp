@@ -2363,7 +2363,3 @@ def city_to_state(city):
                         "Durant": "Oklahoma"}
     return city_to_state_dict[city]  
       
-def easy_function():
-    print("Hello world")
-
-print(city_to_state('Delano'))

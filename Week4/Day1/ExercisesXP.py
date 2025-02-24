@@ -3,6 +3,7 @@ import numpy as np
 Instructions
 
 Create a 1D NumPy array containing numbers from 0 to 9."""
+#%%
 print("\nExercise 1\n")
 print(np.array(range(10)))
 
@@ -63,7 +64,7 @@ Create a 4x4 identity matrix using NumPy. """
 
 print("\nExercise 7\n")
 print(np.diag([1,1,1,1]))
-
+print(np.eye(4, dtype = int))
 
 """ Exercise 8 : Simple Aggregate Funcs
 Instructions
@@ -89,6 +90,6 @@ print(f"Array: {arr}\nReshaped: {arr.reshape(4,5)}")
 Instructions
 
 Extract all odd numbers from a given NumPy array. """
-
+print("\nExercise 10\n")
 arr = np.array(range(1,21))
 print(f"Array: {arr}\nOdd numbers: {arr[arr %2==1]}")
