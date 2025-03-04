@@ -108,7 +108,7 @@ print(f"2D Array: ", a)
 print(f"1D Array:", b)
 print(f"Broadcasted Multiplication: ", result)
 
-#%%
+
 #1. Reshape Array: Create a 1D array with 12 elements and reshape it to a 4x3 matrix. Then reshape it to a 2x6 matrix.
 arr_1d = np.array(range(12))
 arr_2d = arr_1d.reshape(2,6)

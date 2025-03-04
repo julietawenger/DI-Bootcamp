@@ -16,7 +16,7 @@ word = random.choice(wordslist)
 
 ### YOUR CODE STARTS FROM HERE ###
 
-HANGMANPICS = ['''
+""" HANGMANPICS = ['''
   +---+
   |   |
       |
@@ -66,3 +66,20 @@ HANGMANPICS = ['''
  / \  |
       |
 =========''']
+#%%
+'o' in 'lololo'
+"lololo".index('o')
+
+#%%
+
+def turn():
+    print("_"*len(word))
+    letter_guess = input('Enter a letter: ')
+    if letter_guess in word:
+
+        return f"{board[:index]}{replacement}{board[index+1:]}"        
+        print()
+
+def play():
+    print("*** HANGMAN ***")
+     """
